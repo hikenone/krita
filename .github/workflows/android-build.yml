@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env: 
-        ANDROID_NDK_ROOT : /home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b
+        ANDROID_NDK_ROOT : /home/runner/work/krita/krita/android-ndk-r22b
   
     steps:
 
@@ -166,65 +166,65 @@ jobs:
            
      - name: Build Krita [ QT ]
        env:
-           ANDROID_NDK_HOME: "/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b"
+           ANDROID_NDK_HOME: "/home/runner/work/krita/krita/android-ndk-r22b"
        run : |
              pwd ;
              cd packaging; cd android ; ls -a ;
-             export ANDROID_NDK_ROOT=/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b
-             ./androidbuild.sh -p=qt --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             export ANDROID_NDK_ROOT=/home/runner/work/krita/krita/android-ndk-r22b
+             ./androidbuild.sh -p=qt --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
      
      - name: Build Krita [ BOOST ]
        env:
-           ANDROID_NDK_HOME: "/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b"
+           ANDROID_NDK_HOME: "/home/runner/work/krita/krita/android-ndk-r22b"
        run : |
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
-             ./androidbuild.sh -p=boost --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=boost --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
      - name: Build Krita [ kf5 ]
        env:
-           ANDROID_NDK_HOME: "/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b"
+           ANDROID_NDK_HOME: "/home/runner/work/krita/krita/android-ndk-r22b"
        run : |
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
-             ./androidbuild.sh -p=kf5 --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=kf5 --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
      
      - name: Build Krita [ 3rdParty ]
        env:
-           ANDROID_NDK_HOME: "/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b"
+           ANDROID_NDK_HOME: "/home/runner/work/krita/krita/android-ndk-r22b"
        run : |
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
-             ./androidbuild.sh -p=3rdparty --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=3rdparty --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
          
      - name: Build Krita [ Krita-bin ]
        env:
-           ANDROID_NDK_HOME: "/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b"
+           ANDROID_NDK_HOME: "/home/runner/work/krita/krita/android-ndk-r22b"
        run : |
              pwd ;
              cd packaging; cd android ; ls -a ;
-             export ANDROID_NDK_ROOT=/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b
-             ./androidbuild.sh -p=krita-bin --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             export ANDROID_NDK_ROOT=/home/runner/work/krita/krita/android-ndk-r22b
+             ./androidbuild.sh -p=krita-bin --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
     
      - name: Build Krita [ plugins ]
        env:
-           ANDROID_NDK_HOME: "/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b"
+           ANDROID_NDK_HOME: "/home/runner/work/krita/krita/android-ndk-r22b"
        run : |
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
-             ./androidbuild.sh -p=plugins --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=plugins --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
       
      - name: Build Krita [ apk ]
        env:
-           ANDROID_NDK_HOME: "/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b"
+           ANDROID_NDK_HOME: "/home/runner/work/krita/krita/android-ndk-r22b"
        run : |
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
-             ./androidbuild.sh -p=apk --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=apk --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
      
      - name: copy release file
        run: |
@@ -255,8 +255,8 @@ jobs:
        run : |
              pwd ;
              cd packaging; cd android ; ls -a ;
-             export ANDROID_NDK_ROOT=/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b
-             ./androidbuild.sh -p=apk --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita-5.1/krita-5.1/android-ndk-r22b --build-type=Release --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             export ANDROID_NDK_ROOT=/home/runner/work/krita/krita/android-ndk-r22b
+             ./androidbuild.sh -p=apk --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Release --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
      
      - name: check build release dir
        run : |
