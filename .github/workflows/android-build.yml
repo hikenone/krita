@@ -28,9 +28,17 @@ jobs:
             
      - name: Install Qt
        uses: jurplel/install-qt-action@v3.3.0
+       with:
+        target: 'android'
+        arch: 'android_armv7'
+        dir: '${{ github.workspace }}/example/'
+        install-deps: 'true'
+        setup-python: 'true'
+        set-env: 'true'
        
      - name: check avaible qt
        run:  find /usr/lib* -iname "*Qt*"
+       
 
                    
 
@@ -57,8 +65,7 @@ jobs:
              sudo apt install ninja-build ;
              sudo apt-get install libunwind-dev;
              sudo apt-get install -y gettext ;
-             sudo apt install -y qt6-base qt6-base-dev qt6-tools-dev qtcreator qtbase5-dev qt5-qmake ;
-             sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
+            
     
      - uses: actions/checkout@v3
      #  test compile speed after cached
