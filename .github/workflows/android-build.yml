@@ -272,7 +272,7 @@ jobs:
              echo check ;
              ls -a ;
              echo copy
-             cp /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/debug/krita-arm64-v8a-5.1.6-debug.apk ~/krita-arm64-v8a-5.1.6-debug.apk
+             cp /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/debug/krita-arm64-v8a-5.2.0-prealpha-debug.apk ~/krita-arm64-v8a-5.2.0-prealpha-debug.apk
          
      #  release debug ----------
      - name: Release Debug apk
@@ -280,14 +280,14 @@ jobs:
        env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
        with:
-        tag_name: v5.1.6
+        tag_name: v5.2.0
         name: "Mobile-Portrait"  
         draft: false
         prerelease: false
        
         files: |
-                /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/debug/krita-arm64-v8a-5.1.6-debug.apk
-                ~/krita-arm64-v8a-5.1.6-debug.apk
+                /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/debug/krita-arm64-v8a-5.2.0-prealpha-debug.apk
+                ~/krita-arm64-v8a-5.2.0-prealpha-debug.apk
 
      - name: try Build Krita [ apk Release ]
        env:
@@ -314,7 +314,7 @@ jobs:
         draft: false
         prerelease: false
        
-        files: /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/release/krita-arm64-v8a-5.1.6-release-unsigned.apk
+        files: /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/release/krita-arm64-v8a-5.2.0-release-unsigned.apk
   
       # -------------------- Cache Build files -------------------------------------------------------------------------------------
   
