@@ -31,7 +31,7 @@ jobs:
             mkdir -p qt6_folder ;
             cd qt6_folder ;
             pwd ;
-            curl -o https://d13lb3tujbc8s0.cloudfront.net/onlineinstallers/qt-unified-linux-x64-4.7.0-online.run ;
+            curl -o qt-unified-linux-x64-4.7.0-online.run https://d13lb3tujbc8s0.cloudfront.net/onlineinstallers/qt-unified-linux-x64-4.7.0-online.run ;
             echo done ;
              
      - name: install other deps
