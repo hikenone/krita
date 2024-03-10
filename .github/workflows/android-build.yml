@@ -35,6 +35,7 @@ jobs:
              sudo apt install ninja-build ;
              sudo apt-get install libunwind-dev;
              sudo apt-get install -y gettext ;
+             sudo apt install -y qt6-base qt6-base-dev qt6-tools-dev qtcreator qtbase5-dev qt5-qmake ;
              sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
     
      - uses: actions/checkout@v3
@@ -65,8 +66,8 @@ jobs:
      - name: remove other ndk
        run : |
              cd /usr/local/lib/android/sdk/ndk ;
-             ls ;
              rm -rf 23.2.8568313 24.0.8215888 25.2.9519653 ;
+             ls ;
      
      - name: download ndk
        run : |
