@@ -31,7 +31,7 @@ jobs:
        with:
         version: '5.15.2'
         host: 'linux'
-        target: 'desktop android'
+        target: 'desktop'
         dir: '${{ github.workspace }}/qt_folder/'
         install-deps: 'true'
         archives: 'qtbase qtsvg qtdeclarative qtimageformats'
