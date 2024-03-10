@@ -26,18 +26,34 @@ jobs:
             remove-codeql: 'true'
             remove-docker-images: 'true'
             
-    
-     
-                   
-
-    
+     - name: Install Qt
+       uses: jurplel/install-qt-action@v3.3.0
+       with:
+        version: '5.12.1'
+        host: 'linux'
+        target: 'android'
+        dir: '${{ github.workspace }}/qt_folder/'
+        install-deps: 'true'
+        archives: 'qtbase qtsvg qtdeclarative qtimageformats'
+        set-env: 'false'
+       
+     - name: check avaible qt
+       run:  |
+             pwd ;
+             cd ${{ github.workspace }}/qt_folder/Qt/5.12.1/ ;
+             pwd ;
+             ls ;
+             cd android_armv7 ;
+             ls ;
+         
              
      - name: install other deps
        run: |
              sudo apt-get install xorg ;
              sudo apt install libx11-dev ;
              sudo apt install zlib1g zlib1g-dev -y ;
-             sudo apt install ninja-build ;
+             sudo apt install build-essential ;
+             sudo apt install meson ninja-build ;
              sudo apt-get install libunwind-dev;
              sudo apt-get install -y gettext ;
              sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
@@ -218,25 +234,7 @@ jobs:
              export ANDROID_NDK_ROOT=/home/runner/work/krita/krita/android-ndk-r22b
              ./androidbuild.sh -p=krita-bin --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a
 
-     - name: Install Qt
-       uses: jurplel/install-qt-action@v3.3.0
-       with:
-        version: '5.12.1'
-        host: 'linux'
-        target: 'android'
-        dir: '${{ github.workspace }}/qt_folder/'
-        install-deps: 'true'
-        archives: 'qtbase qtsvg qtdeclarative qtimageformats'
-        set-env: 'false'
-       
-     - name: check avaible qt
-       run:  |
-             pwd ;
-             cd ${{ github.workspace }}/qt_folder/Qt/5.12.1/ ;
-             pwd ;
-             ls ;
-             cd android_armv7 ;
-             ls ;
+    
              
     
      - name: Build Krita [ plugins ]
