@@ -33,7 +33,6 @@ jobs:
         arch: 'android_armv7'
         dir: '${{ github.workspace }}/qt_folder/'
         install-deps: 'true'
-        setup-python: 'true'
         archives: 'qtbase qtsvg qtdeclarative qtimageformats'
         set-env: 'true'
        
