@@ -39,7 +39,7 @@ jobs:
             mkdir -p install_folder ;
             pwd ;
             ls ;
-            qt-unified-linux-x64-4.7.0-online.run --root /home/krita/krita/qt6_folder/install_folder --accept-licenses --default-answer --confirm-command install qt.qt6.660.gcc_64 ;
+            ./qt-unified-linux-x64-4.7.0-online.run --root /home/krita/krita/qt6_folder/install_folder --accept-licenses --default-answer --confirm-command install qt.qt6.660.gcc_64 ;
             echo done ;
              
      - name: install other deps
