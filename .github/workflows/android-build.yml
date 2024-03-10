@@ -98,31 +98,31 @@ jobs:
      - uses: actions/cache/restore@v3
        id: restore-cache-d
        with:
-         path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/d
+         path: /home/runner/work/krita/krita/android_build_directory/d
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
      - uses: actions/cache/restore@v3
        id: restore-cache-b
        with:
-         path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/b
+         path: /home/runner/work/krita/krita/android_build_directory/b
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
     
      - uses: actions/cache/restore@v3
        id: restore-cache-p
        with:
-         path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/p
+         path: /home/runner/work/krita/krita/android_build_directory/p
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
       
      - uses: actions/cache/restore@v3
        id: restore-cache-i
        with:
-         path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/i
+         path: /home/runner/work/krita/krita/android_build_directory/i
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
          
      - uses: actions/cache/restore@v3
        id: restore-cache-plugins
        with:
-         path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/plugins
+         path: /home/runner/work/krita/krita/android_build_directory/plugins
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }} 
      
      # -------------------------- below is optional! ----------------------------------------------------
@@ -130,36 +130,36 @@ jobs:
      # - uses: actions/cache/restore@v3
      #   id: restore-cache-krita-android-build
      #   with:
-     #     path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/krita-android-build
+     #     path: /home/runner/work/krita/krita/android_build_directory/krita-android-build
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
      # - uses: actions/cache/restore@v3
      #   id: restore-cache-krita
      #   with:
-     #     path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/krita
+     #     path: /home/runner/work/krita/krita/android_build_directory/krita
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
          
      # - uses: actions/cache/restore@v3
      #   id: restore-cache-lib
      #   with:
-     #     path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/lib
+     #     path: /home/runner/work/krita/krita/android_build_directory/lib
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
          
      # - uses: actions/cache/restore@v3
      #   id: restore-cache-libs
      #   with:
-     #     path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/libs
+     #     path: /home/runner/work/krita/krita/android_build_directory/libs
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
   
      # - uses: actions/cache/restore@v3
      #   id: restore-cache-ranlib
      #   with:
-     #     path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/ranlib
+     #     path: /home/runner/work/krita/krita/android_build_directory/ranlib
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }} 
      # - uses: actions/cache/restore@v3
      #   id: restore-cache-stl
      #   with:
-     #     path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/stl
+     #     path: /home/runner/work/krita/krita/android_build_directory/stl
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }} 
          
      #--------------------------------below is BUILD steps ---------------------------------------------------------- 
@@ -171,7 +171,7 @@ jobs:
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/home/runner/work/krita/krita/android-ndk-r22b
-             ./androidbuild.sh -p=qt --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=qt --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a
      
      - name: Build Krita [ BOOST ]
        env:
@@ -180,7 +180,7 @@ jobs:
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
-             ./androidbuild.sh -p=boost --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=boost --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a
      - name: Build Krita [ kf5 ]
        env:
            ANDROID_NDK_HOME: "/home/runner/work/krita/krita/android-ndk-r22b"
@@ -188,7 +188,7 @@ jobs:
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
-             ./androidbuild.sh -p=kf5 --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=kf5 --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a
      
      - name: Build Krita [ 3rdParty ]
        env:
@@ -197,7 +197,7 @@ jobs:
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
-             ./androidbuild.sh -p=3rdparty --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=3rdparty --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a
          
      - name: Build Krita [ Krita-bin ]
        env:
@@ -206,7 +206,7 @@ jobs:
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/home/runner/work/krita/krita/android-ndk-r22b
-             ./androidbuild.sh -p=krita-bin --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=krita-bin --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a
     
      - name: Build Krita [ plugins ]
        env:
@@ -215,7 +215,7 @@ jobs:
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
-             ./androidbuild.sh -p=plugins --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=plugins --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a
       
      - name: Build Krita [ apk ]
        env:
@@ -224,15 +224,15 @@ jobs:
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
-             ./androidbuild.sh -p=apk --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=apk --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a
      
      - name: copy release file
        run: |
-             cd /home/runner/work/krita-5.1/krita-5.1/android_build_directory/krita_build_apk/build/outputs/apk/debug/
+             cd /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/debug/
              echo check ;
              ls -a ;
              echo copy
-             cp /home/runner/work/krita-5.1/krita-5.1/android_build_directory/krita_build_apk/build/outputs/apk/debug/krita-arm64-v8a-5.1.6-debug.apk ~/krita-arm64-v8a-5.1.6-debug.apk
+             cp /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/debug/krita-arm64-v8a-5.1.6-debug.apk ~/krita-arm64-v8a-5.1.6-debug.apk
          
      #  release debug ----------
      - name: Release Debug apk
@@ -246,7 +246,7 @@ jobs:
         prerelease: false
        
         files: |
-                /home/runner/work/krita-5.1/krita-5.1/android_build_directory/krita_build_apk/build/outputs/apk/debug/krita-arm64-v8a-5.1.6-debug.apk
+                /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/debug/krita-arm64-v8a-5.1.6-debug.apk
                 ~/krita-arm64-v8a-5.1.6-debug.apk
 
      - name: try Build Krita [ apk Release ]
@@ -256,11 +256,11 @@ jobs:
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/home/runner/work/krita/krita/android-ndk-r22b
-             ./androidbuild.sh -p=apk --src=/home/runner/work/krita-5.1/krita-5.1 --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Release --build-root=/home/runner/work/krita-5.1/krita-5.1/android_build_directory --api-level=23 --android-abi=arm64-v8a
+             ./androidbuild.sh -p=apk --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Release --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a
      
      - name: check build release dir
        run : |
-             cd /home/runner/work/krita-5.1/krita-5.1/android_build_directory/krita_build_apk/build/outputs/apk/release
+             cd /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/release
              ls -a ;
 
      #  release  unsign ----------
@@ -274,74 +274,74 @@ jobs:
         draft: false
         prerelease: false
        
-        files: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/krita_build_apk/build/outputs/apk/release/krita-arm64-v8a-5.1.6-release-unsigned.apk
+        files: /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/release/krita-arm64-v8a-5.1.6-release-unsigned.apk
   
       # -------------------- Cache Build files -------------------------------------------------------------------------------------
   
      - uses: actions/cache/save@v3
        id: cache-d
        with:
-         path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/d
+         path: /home/runner/work/krita/krita/android_build_directory/d
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
      
      - uses: actions/cache/save@v3
        id: cache-b
        with:
-         path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/b
+         path: /home/runner/work/krita/krita/android_build_directory/b
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
      
      - uses: actions/cache/save@v3
        id: cache-p
        with:
-         path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/p
+         path: /home/runner/work/krita/krita/android_build_directory/p
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
      
      - uses: actions/cache/save@v3
        id: cache-i
        with:
-         path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/i
+         path: /home/runner/work/krita/krita/android_build_directory/i
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
      # - uses: actions/cache/save@v3
      #   id: cache-krita-android-build
      #   with:
-     #     path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/krita-android-build
+     #     path: /home/runner/work/krita/krita/android_build_directory/krita-android-build
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
          
      # - uses: actions/cache/save@v3
      #   id: cache-krita
      #   with:
-     #     path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/krita
+     #     path: /home/runner/work/krita/krita/android_build_directory/krita
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
          
      # - uses: actions/cache/save@v3
      #   id: cache-lib
      #   with:
-     #     path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/lib
+     #     path: /home/runner/work/krita/krita/android_build_directory/lib
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
          
      # - uses: actions/cache/save@v3
      #   id: cache-libs
      #   with:
-     #     path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/libs
+     #     path: /home/runner/work/krita/krita/android_build_directory/libs
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
          
      - uses: actions/cache/save@v3
        id: cache-plugins
        with:
-         path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/plugins
+         path: /home/runner/work/krita/krita/android_build_directory/plugins
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }} 
      
      # - uses: actions/cache/save@v3
      #   id: cache-ranlib
      #   with:
-     #     path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/ranlib
+     #     path: /home/runner/work/krita/krita/android_build_directory/ranlib
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }} 
          
      # - uses: actions/cache/save@v3
      #   id: cache-stl
      #   with:
-     #     path: /home/runner/work/krita-5.1/krita-5.1/android_build_directory/stl
+     #     path: /home/runner/work/krita/krita/android_build_directory/stl
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }} 
          
      
