@@ -25,6 +25,9 @@ jobs:
             remove-haskell: 'true'
             remove-codeql: 'true'
             remove-docker-images: 'true'
+            
+     - name: check avaible qt
+       run:  find /usr/lib* -iname "*Qt*"
   
      - name: install qt6 and qt
        run: |
