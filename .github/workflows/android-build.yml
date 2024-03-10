@@ -26,26 +26,7 @@ jobs:
             remove-codeql: 'true'
             remove-docker-images: 'true'
             
-     - name: Install Qt
-       uses: jurplel/install-qt-action@v3.3.0
-       with:
-        version: '5.12.1'
-        host: 'linux'
-        target: 'android'
-        dir: '${{ github.workspace }}/qt_folder/'
-        install-deps: 'true'
-        archives: 'qtbase qtsvg qtdeclarative qtimageformats'
-        set-env: 'false'
-       
-     - name: check avaible qt
-       run:  |
-             pwd ;
-             cd ${{ github.workspace }}/qt_folder/Qt/5.12.1/ ;
-             pwd ;
-             ls ;
-             cd android_armv7 ;
-             ls ;
-         
+   
              
      - name: install other deps
        run: |
@@ -234,7 +215,17 @@ jobs:
              export ANDROID_NDK_ROOT=/home/runner/work/krita/krita/android-ndk-r22b
              ./androidbuild.sh -p=krita-bin --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a
 
-    
+
+     - name: Install Qt
+       uses: jurplel/install-qt-action@v3.3.0
+       with:
+        version: '5.12.1'
+        host: 'linux'
+        target: 'android'
+        dir: '${{ github.workspace }}/qt_folder/'
+        install-deps: 'true'
+        archives: 'qtbase qtsvg qtdeclarative qtimageformats'
+        set-env: 'false'
              
     
      - name: Build Krita [ plugins ]
