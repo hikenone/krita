@@ -31,9 +31,10 @@ jobs:
        with:
         target: 'android'
         arch: 'android_armv7'
-        dir: '${{ github.workspace }}/example/'
+        dir: '${{ github.workspace }}/qt_folder/'
         install-deps: 'true'
         setup-python: 'true'
+        archives: 'qtbase qtsvg qtdeclarative qtimageformats'
         set-env: 'true'
        
      - name: check avaible qt
