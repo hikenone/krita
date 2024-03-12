@@ -251,7 +251,7 @@ jobs:
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
-             ./androidbuild.sh -p=plugins --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a --qt-path=${{ github.workspace }}/qt_folder/Qt/5.15.2/
+             ./androidbuild.sh -p=plugins --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a --qt-path=${{ github.workspace }}/qt_folder/Qt/5.15.2/android_armv7
       
      - name: Build Krita [ apk ]
        env:
@@ -294,10 +294,10 @@ jobs:
              export ANDROID_NDK_ROOT=/home/runner/work/krita/krita/android-ndk-r22b
              ./androidbuild.sh -p=apk --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Release --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a
      
-     - name: check build release dir
-       run : |
-             cd /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/release
-             ls -a ;
+    # - name: check build release dir
+    #   run : |
+    #         cd /home/runner/work/krita/krita/android_build_directory/krita_build_apk/build/outputs/apk/release
+    #         ls -a ;
 
      #  release  unsign ----------
      - name: Release unsign apk
