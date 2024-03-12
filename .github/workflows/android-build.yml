@@ -35,7 +35,7 @@ jobs:
         dir: '${{ github.workspace }}/qt_folder/'
         install-deps: 'true'
         archives: 'qtbase qtsvg qtdeclarative qtimageformats'
-        set-env: 'false'
+        set-env: 'true'
 
      - name: Install Qt
        uses: jurplel/install-qt-action@v3.3.0
@@ -46,7 +46,7 @@ jobs:
         dir: '${{ github.workspace }}/qt_folder/'
         install-deps: 'true'
         archives: 'qtbase qtsvg qtdeclarative qtimageformats'
-        set-env: 'false'
+        set-env: 'true'
              
             
    
