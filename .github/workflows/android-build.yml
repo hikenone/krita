@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env: 
         ANDROID_NDK_ROOT : /home/runner/work/krita/krita/android-ndk-r22b
+        CMAKE_PREFIX_PATH : /home/runner/work/krita/krita/qt_folder/Qt
   
     steps:
 
@@ -138,6 +139,7 @@ jobs:
      - name: create build dfolder
        run : |
               mkdir -p android_build_directory;
+              
               
      #------------------------------------------------------------------------------------------          
      - name: restore chace
