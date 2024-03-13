@@ -277,36 +277,36 @@ jobs:
 #REMEMBER TO UNCOMMENT THIS 
 # try save cache #-----------------------------------------
      
-   #  - uses: actions/cache/save@v3
-     #  id: cache-d
-     #  with:
-     #    path: /home/runner/work/krita/krita/android_build_directory/d
-     #    key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+     - uses: actions/cache/save@v3
+       id: cache-d
+       with:
+         path: /home/runner/work/krita/krita/android_build_directory/d
+         key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
      
-     #- uses: actions/cache/save@v3
-     #  id: cache-b
-    #   with:
-   #      path: /home/runner/work/krita/krita/android_build_directory/b
-    #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
-  #   
-  #   - uses: actions/cache/save@v3
-  #     id: cache-p
-  #     with:
-  #       path: /home/runner/work/krita/krita/android_build_directory/p
-  #       key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+     - uses: actions/cache/save@v3
+       id: cache-b
+       with:
+         path: /home/runner/work/krita/krita/android_build_directory/b
+         key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+   
+     - uses: actions/cache/save@v3
+       id: cache-p
+       with:
+         path: /home/runner/work/krita/krita/android_build_directory/p
+         key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
      
-  #   - uses: actions/cache/save@v3
-  #     id: cache-i
-  #     with:
-  #       path: /home/runner/work/krita/krita/android_build_directory/i
- #        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+     - uses: actions/cache/save@v3
+       id: cache-i
+       with:
+         path: /home/runner/work/krita/krita/android_build_directory/i
+         key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
 
-   #  - uses: actions/cache/save@v3
-   #    id: krita-android-build
-   #    with:
-   #      path: /home/runner/work/krita/krita/android_build_directory/krita-android-build/
-   #      key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+     - uses: actions/cache/save@v3
+       id: krita-android-build
+       with:
+         path: /home/runner/work/krita/krita/android_build_directory/krita-android-build/
+         key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
         
 
