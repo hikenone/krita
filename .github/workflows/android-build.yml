@@ -59,10 +59,8 @@ jobs:
  #            cd /home/runner/work/krita/krita/qt_folder/Qt/5.15.2/gcc_64/lib/ ;
  #            ls ;
 
- #    - name: set cmake qt prefix
- #      run: |
- #            cmake -DCMAKE_PREFIX_PATH="/home/runner/work/krita/krita/qt_folder/Qt/5.15.2/gcc_64/lib/cmake"
- #            
+
+             
             
    
              
@@ -245,7 +243,11 @@ jobs:
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
              ./androidbuild.sh -p=3rdparty --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a
-         
+
+     - name: set cmake qt prefix
+       run: |
+             cmake -DCMAKE_PREFIX_PATH="/home/runner/work/krita/krita/qt_folder/Qt/5.15.2/gcc_64/lib/cmake"      
+             
      - name: Build Krita [ Krita-bin ]
        env:
            ANDROID_NDK_HOME: "/home/runner/work/krita/krita/android-ndk-r22b"
