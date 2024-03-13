@@ -22,7 +22,11 @@ jobs:
        run: |
              sudo apt-get install qtbase5-dev
              sudo apt-get install qtdeclarative5-dev
-             
+
+     - name: install extra-cmake-modules
+       run:  |
+              sudo apt-get install extra-cmake-modules
+    
      - name: Maximize build disk space
        uses: easimon/maximize-build-space@v10
        with:
