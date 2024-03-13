@@ -21,6 +21,7 @@ jobs:
      - name: install qtbase5-dev
        run: |
              sudo apt-get install qtbase5-dev
+             sudo apt-get install qtdeclarative5-dev
              
      - name: Maximize build disk space
        uses: easimon/maximize-build-space@v10
@@ -53,15 +54,15 @@ jobs:
 #        archives: 'qtbase qtsvg qtdeclarative qtimageformats'
 #        set-env: 'true'
 
-     - name: set cmake qt prefix
-       run: |
-             cd /home/runner/work/krita/krita/qt_folder/Qt/5.15.2/gcc_64/lib/ ;
-             ls ;
+ #    - name: set cmake qt prefix
+ #      run: |
+ #            cd /home/runner/work/krita/krita/qt_folder/Qt/5.15.2/gcc_64/lib/ ;
+ #            ls ;
 
-     - name: set cmake qt prefix
-       run: |
-             cmake -DCMAKE_PREFIX_PATH="/home/runner/work/krita/krita/qt_folder/Qt/5.15.2/gcc_64/lib/cmake"
-             
+ #    - name: set cmake qt prefix
+ #      run: |
+ #            cmake -DCMAKE_PREFIX_PATH="/home/runner/work/krita/krita/qt_folder/Qt/5.15.2/gcc_64/lib/cmake"
+ #            
             
    
              
