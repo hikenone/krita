@@ -322,7 +322,7 @@ jobs:
              pwd ;
              cd packaging; cd android ; ls -a ;
              export ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/22.1.7171670
-             ./androidbuild.sh -p=plugins --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a --qt-path=/home/runner/work/krita/krita/qt_folder/Qt/5.12.1/android_armv7
+             ./androidbuild.sh -p=plugins --src=/home/runner/work/krita/krita --ndk-path=/home/runner/work/krita/krita/android-ndk-r22b --build-type=Debug --build-root=/home/runner/work/krita/krita/android_build_directory --api-level=23 --android-abi=arm64-v8a --qt-path=/home/runner/work/krita/krita/qt_folder/Qt/5.12.1/
       
      - name: Build Krita [ apk ]
        env:
