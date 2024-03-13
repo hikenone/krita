@@ -107,12 +107,15 @@ jobs:
      #     path: ~/download
      #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
              
-       
+     - name: check other ndk
+       run : |
+             cd /usr/local/lib/android/sdk/ndk ;
+             ls ;
 
      - name: remove other ndk
        run : |
              cd /usr/local/lib/android/sdk/ndk ;
-             rm -rf 23.2.8568313 24.0.8215888 25.2.9519653 ;
+             rm -rf 23.2.8568313 24.0.8215888 25.2.9519653 26.2.11394342 ;
              ls ;
      
      - name: download ndk
