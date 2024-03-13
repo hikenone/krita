@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env: 
         ANDROID_NDK_ROOT : /home/runner/work/krita/krita/android-ndk-r22b
-        CMAKE_PREFIX_PATH : /home/runner/work/krita/krita/qt_folder/Qt/5.15.2/gcc_64
+        CMAKE_PREFIX_PATH : /home/runner/work/krita/krita/qt_folder/Qt/5.15.2/
   
     steps:
 
