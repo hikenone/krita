@@ -31,27 +31,31 @@ jobs:
             remove-codeql: 'true'
             remove-docker-images: 'true'
 
-    # - name: Install Qt
-    #   uses: jurplel/install-qt-action@v3.3.0
-    #   with:
-    #    version: '5.15.*'
-    #    host: 'linux'
-    #    target: 'desktop'
-    #    dir: '${{ github.workspace }}/qt_folder/'
-    #    install-deps: 'true'
-    #    archives: 'qtbase qtsvg qtdeclarative qtimageformats'
-    #    set-env: 'true'
+     - name: Install Qt
+       uses: jurplel/install-qt-action@v3.3.0
+       with:
+        version: '5.15.*'
+        host: 'linux'
+        target: 'desktop'
+        dir: '${{ github.workspace }}/qt_folder/'
+        install-deps: 'true'
+        archives: 'qtbase qtsvg qtdeclarative qtimageformats'
+        set-env: 'true'
 
-   #  - name: Install Qt
-   #    uses: jurplel/install-qt-action@v3.3.0
-   #    with:
-  #      version: '5.15.*'
-  #      host: 'linux'
-  #      target: 'android'
-  #      dir: '${{ github.workspace }}/qt_folder/'
-  #      install-deps: 'true'
-  #      archives: 'qtbase qtsvg qtdeclarative qtimageformats'
-  #      set-env: 'true'
+     - name: Install Qt
+       uses: jurplel/install-qt-action@v3.3.0
+       with:
+        version: '5.15.*'
+        host: 'linux'
+        target: 'android'
+        dir: '${{ github.workspace }}/qt_folder/'
+        install-deps: 'true'
+        archives: 'qtbase qtsvg qtdeclarative qtimageformats'
+        set-env: 'true'
+
+     - name: set cmake qt prefix
+       run: |
+             cmake -DCMAKE_PREFIX_PATH="/home/runner/work/krita/krita/qt_folder/Qt/5.15.2/gcc_64/lib/cmake"
              
             
    
