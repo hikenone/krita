@@ -84,7 +84,7 @@ jobs:
        run: |
             pip install meson-python
     
-     - uses: actions/checkout@v3
+     - uses: actions/checkout@v4
      #  test compile speed after cached
      
      # - uses: actions/cache/restore@v3
@@ -148,25 +148,25 @@ jobs:
      - name: restore chace
        run : echo restore;
        
-     - uses: actions/cache/restore@v3
+     - uses: actions/cache/restore@v4
        id: restore-cache-d
        with:
          path: /home/runner/work/krita/krita/android_build_directory/d
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
-     - uses: actions/cache/restore@v3
+     - uses: actions/cache/restore@v4
        id: restore-cache-b
        with:
          path: /home/runner/work/krita/krita/android_build_directory/b
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
     
-     - uses: actions/cache/restore@v3
+     - uses: actions/cache/restore@v4
        id: restore-cache-p
        with:
          path: /home/runner/work/krita/krita/android_build_directory/p
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
       
-     - uses: actions/cache/restore@v3
+     - uses: actions/cache/restore@v4
        id: restore-cache-i
        with:
          path: /home/runner/work/krita/krita/android_build_directory/i
@@ -178,7 +178,7 @@ jobs:
          path: /home/runner/work/krita/krita/android_build_directory/plugins
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }} 
 
-     - uses: actions/cache/restore@v3
+     - uses: actions/cache/restore@v4
        id: restore-krita-android-build
        with:
          path: /home/runner/work/krita/krita/android_build_directory/krita-android-build/
