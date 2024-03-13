@@ -285,9 +285,9 @@ jobs:
          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
          
 
-     - name: set cmake qt prefix
-       run: |
-             cmake -DCMAKE_PREFIX_PATH="/home/runner/work/krita/krita/qt_folder/Qt/5.15.2/gcc_64/lib/cmake"      
+    # - name: set cmake qt prefix
+    #   run: |
+    #         cmake -DCMAKE_PREFIX_PATH="/home/runner/work/krita/krita/qt_folder/Qt/5.15.2/gcc_64/lib/cmake"      
 
     
      - name: Build Krita [ plugins ]
