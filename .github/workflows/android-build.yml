@@ -17,6 +17,11 @@ jobs:
      - name: check update ubuntu and install other deps
        run: |
              sudo apt-get update ;
+
+     - name: install qtbase5-dev
+       run: |
+             sudo apt-get install qtbase5-dev
+             
      - name: Maximize build disk space
        uses: easimon/maximize-build-space@v10
        with:
