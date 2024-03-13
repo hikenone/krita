@@ -56,7 +56,7 @@ jobs:
             
    
              
-     - name: install other deps
+     - name: install other depss
        run: |
              sudo apt-get install xorg ;
              sudo apt install libx11-dev ;
